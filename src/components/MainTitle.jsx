@@ -1,12 +1,12 @@
 import { useContext } from "react"
-import { Context } from "../SharedState"
+import { Context } from "../storage/SharedStorage"
 
 function MainTitle () {
 
-    const { state } = useContext(Context);
+    const [ store, ] = useContext(Context);
 
     return (
-        <p>{state.saludo}, humano.</p>
+        <p>{store.saludo}, humano. El número es {store.cifra}.</p>
     )
 }
 

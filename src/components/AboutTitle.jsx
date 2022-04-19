@@ -1,20 +1,21 @@
 import { useContext } from "react"
-import { Context } from "../SharedState"
+import { Context } from "../storage/SharedStorage"
 
 function AboutTitle () {
 
-    const { state, actions } = useContext(Context);
+    const [ store, setStore ] = useContext(Context);
 
-    function sumaHandler () {
-        const newState = { ...state };
-        newState.cifra ++;
-        actions.setState(newState);
+    function clickHandler () {
+        //setStore({...store, cifra: cifra+1})
+        const newStore = {...store};
+        newStore.cifra++;
+        setStore(newStore);
     }
 
     return (
         <>
-            <p>El número es {state.cifra}.</p>
-            <button onClick={sumaHandler}>Suma 1</button>
+            <p>El número es {store.cifra}.</p>
+            <button onClick={clickHandler}>Suma 1</button>
         </>
     )
 }

@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 
-import { ContextProvider } from "./SharedState";
+import { ContextProvider } from "./storage/SharedStorage";
 
 import Main from './views/Main';
 import About from './views/About'; 
